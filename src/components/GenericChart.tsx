@@ -117,12 +117,12 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
     //     </div>
     // )
     return (
-        <div className='flex flex-col items-center mt-8 rounded-lg shadow-md'>
+        <div className='flex flex-col items-center mt-8 rounded-lg overflow-hidden shadow-lg bg-gray-100'>
             <div className='flex flex-col items-center mt-8'>
-                <div className='flex space-x-4 mb-4'>
+                <div className='flex flex-wrap justify-center space-x-2 mb-4'>
                     <button
                         onClick={() => setSelectedDateRange('oneMonth')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded transition duration-300 ${
+                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ml-2 ${
                             selectedDateRange === 'oneMonth' && 'bg-blue-700'
                         }`}
                     >
@@ -130,7 +130,7 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
                     </button>
                     <button
                         onClick={() => setSelectedDateRange('sixMonths')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded transition duration-300 ${
+                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
                             selectedDateRange === 'sixMonths' && 'bg-blue-700'
                         }`}
                     >
@@ -138,7 +138,7 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
                     </button>
                     <button
                         onClick={() => setSelectedDateRange('oneYear')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded transition duration-300 ${
+                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
                             selectedDateRange === 'oneYear' && 'bg-blue-700'
                         }`}
                     >
@@ -146,7 +146,7 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
                     </button>
                     <button
                         onClick={() => setSelectedDateRange('fiveYears')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded transition duration-300 ${
+                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
                             selectedDateRange === 'fiveYears' && 'bg-blue-700'
                         }`}
                     >
@@ -154,7 +154,7 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
                     </button>
                     <button
                         onClick={() => setSelectedDateRange('all')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded transition duration-300 ${
+                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
                             selectedDateRange === 'all' && 'bg-blue-700'
                         }`}
                     >
@@ -163,7 +163,7 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
                 </div>
             </div>
 
-            <div className='w-full bg-white p-6 '>
+            <div className='w-full bg-gray-100 p-6 '>
                 <HighchartsReact highcharts={Highcharts} options={options} />
             </div>
         </div>
