@@ -5,18 +5,9 @@ import HighchartsReact from 'highcharts-react-official'
 interface UIChartProps {
     type: 'line' | 'bar' | 'column' | 'area' | 'scatter' | 'spline'
     color: string
-
-    // startDate: string;
-    // endDate: string;
 }
 
-const UIChart: React.FC<UIChartProps> = ({
-    type,
-    color,
-
-    // startDate,
-    // endDate,
-}) => {
+const UIChart: React.FC<UIChartProps> = ({ type, color }) => {
     const generateRandomData = () => {
         const data = []
         let currentValue = 0
