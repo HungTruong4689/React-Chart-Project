@@ -18,41 +18,6 @@ const ViewPage: React.FC<ViewPageProps> = () => {
         return itemDate >= start && itemDate <= end
     })
 
-    // return (
-    //     <div className='bg-green-500'>
-    //         <h1>My React Highcharts App - View Page</h1>
-    //         <div className='flex justify-between items-center mb-4'>
-    //             <input
-    //                 type='date'
-    //                 value={startDate}
-    //                 onChange={(e) => setStartDate(e.target.value)}
-    //                 className='input-date'
-    //             />
-    //             <input
-    //                 type='date'
-    //                 value={endDate}
-    //                 onChange={(e) => setEndDate(e.target.value)}
-    //                 className='input-date'
-    //             />
-    //         </div>
-    //         <div className='grid grid-cols-2 gap-4'></div>
-    //         {filteredData.length === 0 ? (
-    //             <p>No data available for the selected date range.</p>
-    //         ) : (
-    //             <div className='grid grid-cols-3 gap-4'>
-    //                 {charts.map((chart) => (
-    //                     <GenericChart
-    //                         key={chart.id}
-    //                         type={chart.type}
-    //                         data={filteredData}
-    //                         color={chart.color}
-    //                         name={chart.name}
-    //                     />
-    //                 ))}
-    //             </div>
-    //         )}
-    //     </div>
-    // )
     return (
         <div className=' p-8'>
             <h1 className='text-3xl font-bold mb-6 text-blue-500 flex justify-center'>
@@ -60,24 +25,57 @@ const ViewPage: React.FC<ViewPageProps> = () => {
             </h1>
 
             <div className='flex justify-between items-center mb-4'>
-                <input
-                    type='date'
-                    value={startDate}
-                    onChange={(e) => setStartDate(e.target.value)}
-                    className='input-date'
-                />
-                <input
-                    type='date'
-                    value={endDate}
-                    onChange={(e) => setEndDate(e.target.value)}
-                    className='input-date'
-                />
+                <div className='relative'>
+                    <label
+                        htmlFor='startDate'
+                        className='block text-sm font-medium text-gray-700 mb-1'
+                    >
+                        Start Date
+                    </label>
+                    <input
+                        id='startDate'
+                        type='date'
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        className='input-date border border-gray-300 rounded-md p-2'
+                    />
+                </div>
+                <div className='relative'>
+                    <label
+                        htmlFor='endDate'
+                        className='block text-sm font-medium text-gray-700 mb-1'
+                    >
+                        End Date
+                    </label>
+                    <input
+                        id='endDate'
+                        type='date'
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
+                        className='input-date border border-gray-300 rounded-md p-2'
+                    />
+                </div>
             </div>
 
-            {filteredData.length === 0 ? (
+            {/* {filteredData.length === 0 ? (
                 <p className='text-white'>No data available for the selected date range.</p>
             ) : (
                 <div className='grid grid-cols-3 gap-4'>
+                    {charts.map((chart) => (
+                        <GenericChart
+                            key={chart.id}
+                            type={chart.type}
+                            data={filteredData}
+                            color={chart.color}
+                            name={chart.name}
+                        />
+                    ))}
+                </div>
+            )} */}
+            {filteredData.length === 0 ? (
+                <p className='text-white'>No data available for the selected date range.</p>
+            ) : (
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                     {charts.map((chart) => (
                         <GenericChart
                             key={chart.id}
