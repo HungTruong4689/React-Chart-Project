@@ -19,7 +19,7 @@ This application is a Single Page Web Application (SPA) built using React and Ty
   npm install
 ```
 
-3. Usage
+## Usage
 
 ### Development
 
@@ -31,8 +31,9 @@ Run the application in development mode:
 
 This will start the development server using Vite.
 
-4. Building
-   Build the application for production:
+## Building
+
+Build the application for production:
 
 ```bash
   npm run build
@@ -40,8 +41,9 @@ This will start the development server using Vite.
 
 This command compiles TypeScript code and bundles the application using Vite.
 
-5. Linting
-   Lint the code using ESLint:
+## Linting
+
+Lint the code using ESLint:
 
 ```bash
   npm run lint
@@ -49,8 +51,9 @@ This command compiles TypeScript code and bundles the application using Vite.
 
 This command uses ESLint to check the code for potential issues and enforces a consistent coding style.
 
-6. Preview
-   Preview the production build:
+## Preview
+
+Preview the production build:
 
 ```bash
 npm run preview
@@ -58,7 +61,7 @@ npm run preview
 
 This command serves the production build locally for previewing before deployment.
 
-7. Features
+## Features
 
 -   Responsive UI design.
 -   Two main routes: "View mode" and "Settings."
@@ -67,8 +70,10 @@ This command serves the production build locally for previewing before deploymen
 -   "Settings" route allows users to add, edit, or remove charts using a modal window.
 -   Users can customize chart properties such as name, type (line, spline, area), and color.
 
-8.  Data Source
+## Data Source
+
     The data for the charts can be either randomly generated. Each value should have "value" and "date" fields.
 
-9.  Configuration
+## Configuration
+
     Check the package.json file for details on dependencies and development scripts.
