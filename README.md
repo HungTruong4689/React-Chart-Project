@@ -72,8 +72,8 @@ This command serves the production build locally for previewing before deploymen
 
 ## Data Source
 
-    The data for the charts can be either randomly generated. Each value should have "value" and "date" fields.
+The data for the charts can be either randomly generated. Each value should have "value" and "date" fields.
 
 ## Configuration
 
-    Check the package.json file for details on dependencies and development scripts.
+Check the package.json file for details on dependencies and development scripts.
