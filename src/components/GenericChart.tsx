@@ -23,7 +23,7 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
 }) => {
     const [selectedDateRange, setSelectedDateRange] = useState<
         'oneMonth' | 'sixMonths' | 'oneYear' | 'fiveYears' | 'all'
-    >('all')
+    >('oneMonth')
     const getFilteredData = (data: Data, selectedDateRange: string): Data => {
         const currentDate = new Date(data[data.length - 1].date)
         const lastMonth = new Date(currentDate)
@@ -85,6 +85,7 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
                 name: 'Value',
                 data: values,
                 color: color,
+                fillOpacity: type === 'area' ? 0.3 : 1,
             },
         ],
         credits: {
@@ -92,77 +93,54 @@ const GenrericChart: React.FC<GenrericChartProps> = ({
         },
     }
 
-    // return (
-    //     <div>
-    //         <div>
-    //             <button onClick={() => setSelectedDateRange('oneMonth')} className='filter-button'>
-    //                 Last Month
-    //             </button>
-    //             <button onClick={() => setSelectedDateRange('sixMonths')} className='filter-button'>
-    //                 Last 6 Months
-    //             </button>
-    //             <button onClick={() => setSelectedDateRange('oneYear')} className='filter-button'>
-    //                 Last Year
-    //             </button>
-    //             <button onClick={() => setSelectedDateRange('fiveYears')} className='filter-button'>
-    //                 Last 5 Years
-    //             </button>
-    //             <button onClick={() => setSelectedDateRange('all')} className='filter-button'>
-    //                 All
-    //             </button>
-    //         </div>
-    //         <div>
-    //             <HighchartsReact highcharts={Highcharts} options={options} />
-    //         </div>
-    //     </div>
-    // )
+    const dateRangeSelection = (
+        <div className='flex flex-wrap justify-center space-x-2 mb-4'>
+            <button
+                onClick={() => setSelectedDateRange('oneMonth')}
+                className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ml-2 ${
+                    selectedDateRange === 'oneMonth' && 'bg-blue-700'
+                }`}
+            >
+                1M
+            </button>
+            <button
+                onClick={() => setSelectedDateRange('sixMonths')}
+                className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
+                    selectedDateRange === 'sixMonths' && 'bg-blue-700'
+                }`}
+            >
+                6M
+            </button>
+            <button
+                onClick={() => setSelectedDateRange('oneYear')}
+                className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
+                    selectedDateRange === 'oneYear' && 'bg-blue-700'
+                }`}
+            >
+                1Y
+            </button>
+            <button
+                onClick={() => setSelectedDateRange('fiveYears')}
+                className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
+                    selectedDateRange === 'fiveYears' && 'bg-blue-700'
+                }`}
+            >
+                5Y
+            </button>
+            <button
+                onClick={() => setSelectedDateRange('all')}
+                className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
+                    selectedDateRange === 'all' && 'bg-blue-700'
+                }`}
+            >
+                All
+            </button>
+        </div>
+    )
+
     return (
         <div className='flex flex-col items-center mt-8 rounded-lg overflow-hidden shadow-lg bg-gray-100'>
-            <div className='flex flex-col items-center mt-8'>
-                <div className='flex flex-wrap justify-center space-x-2 mb-4'>
-                    <button
-                        onClick={() => setSelectedDateRange('oneMonth')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ml-2 ${
-                            selectedDateRange === 'oneMonth' && 'bg-blue-700'
-                        }`}
-                    >
-                        1M
-                    </button>
-                    <button
-                        onClick={() => setSelectedDateRange('sixMonths')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
-                            selectedDateRange === 'sixMonths' && 'bg-blue-700'
-                        }`}
-                    >
-                        6M
-                    </button>
-                    <button
-                        onClick={() => setSelectedDateRange('oneYear')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
-                            selectedDateRange === 'oneYear' && 'bg-blue-700'
-                        }`}
-                    >
-                        1Y
-                    </button>
-                    <button
-                        onClick={() => setSelectedDateRange('fiveYears')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
-                            selectedDateRange === 'fiveYears' && 'bg-blue-700'
-                        }`}
-                    >
-                        5Y
-                    </button>
-                    <button
-                        onClick={() => setSelectedDateRange('all')}
-                        className={`px-4 py-2 bg-blue-500 text-white rounded-md transition duration-300 w-16 mb-2 ${
-                            selectedDateRange === 'all' && 'bg-blue-700'
-                        }`}
-                    >
-                        All
-                    </button>
-                </div>
-            </div>
-
+            <div className='flex flex-col items-center mt-8'>{dateRangeSelection}</div>
             <div className='w-full bg-gray-100 p-6 '>
                 <HighchartsReact highcharts={Highcharts} options={options} />
             </div>

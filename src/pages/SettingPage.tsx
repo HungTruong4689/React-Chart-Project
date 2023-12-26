@@ -5,7 +5,9 @@ import { addChart, updateChart, removeChart, ChartInstance } from '../redux/char
 import ChartConfigModal from '../components/ChartConfigModal'
 import UIChart from '../components/UIChart'
 
-interface SettingPageProps {}
+interface SettingPageProps {
+    // Define your props here
+}
 
 const SettingPage: React.FC<SettingPageProps> = () => {
     const [isModalOpen, setModalOpen] = useState(false)
@@ -38,6 +40,22 @@ const SettingPage: React.FC<SettingPageProps> = () => {
         }
         setModalOpen(false)
     }
+
+    // const generateRandomData = () => {
+    //     const data = []
+    //     let currentValue = 0
+
+    //     while (currentValue <= 20) {
+    //         const value = Math.floor(Math.random() * 100) // Generate random values between 0 and 100
+    //         data.push(value)
+
+    //         currentValue++
+    //     }
+
+    //     return data
+    // }
+
+    // const randomData = generateRandomData()
 
     return (
         <div className='container mx-auto p-4'>

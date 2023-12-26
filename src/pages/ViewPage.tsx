@@ -24,7 +24,7 @@ const ViewPage: React.FC<ViewPageProps> = () => {
                 My React Highcharts App - View Page
             </h1>
 
-            <div className='flex justify-between items-center mb-4'>
+            <div className='flex justify-center items-center gap-4 mb-4 mx-auto'>
                 <div className='relative'>
                     <label
                         htmlFor='startDate'

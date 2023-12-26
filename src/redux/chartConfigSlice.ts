@@ -15,7 +15,7 @@ const initialState: ChartConfigState = {
     charts: [
         {
             id: 1,
-            type: 'line',
+            type: 'area',
             name: 'Chart 1',
             color: '#ff0000',
         },
@@ -27,7 +27,7 @@ const initialState: ChartConfigState = {
         },
         {
             id: 3,
-            type: 'line',
+            type: 'column',
             name: 'Chart 3',
             color: '#0000ff',
         },

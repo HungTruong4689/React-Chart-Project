@@ -5,9 +5,18 @@ import HighchartsReact from 'highcharts-react-official'
 interface UIChartProps {
     type: 'line' | 'bar' | 'column' | 'area' | 'scatter' | 'spline'
     color: string
+
+    // startDate: string;
+    // endDate: string;
 }
 
-const UIChart: React.FC<UIChartProps> = ({ type, color }) => {
+const UIChart: React.FC<UIChartProps> = ({
+    type,
+    color,
+
+    // startDate,
+    // endDate,
+}) => {
     const generateRandomData = () => {
         const data = []
         let currentValue = 0
@@ -39,6 +48,7 @@ const UIChart: React.FC<UIChartProps> = ({ type, color }) => {
                 name: null,
                 data: randomData,
                 color: color,
+                fillOpacity: type === 'area' ? 0.3 : 1,
             },
         ],
         title: {
@@ -59,7 +69,7 @@ const UIChart: React.FC<UIChartProps> = ({ type, color }) => {
         plotOptions: {
             series: {
                 marker: {
-                    enabled: false, // Disable markers
+                    enabled: true,
                 },
             },
         },

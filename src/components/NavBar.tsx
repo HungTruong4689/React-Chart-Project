@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
                         to='/view'
                         className={`text-white hover:text-yellow-300 transition duration-300 ease-in-out focus:text-yellow-300 focus:outline-none ${
                             selectedView === '/view' || selectedView === '/'
-                                ? ' text-yellow-300'
+                                ? ' text-yellow-300 font-semibold'
                                 : ''
                         }`}
                     >
@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
                     <NavLink
                         to='/setting'
                         className={`text-white hover:text-gray-300 transition duration-300 ease-in-out focus:text-yellow-300 focus:outline-none ${
-                            selectedView === '/setting' ? 'text-yellow-300' : ''
+                            selectedView === '/setting' ? 'text-yellow-300 font-semibold' : ''
                         }`}
                     >
                         Setting Page
