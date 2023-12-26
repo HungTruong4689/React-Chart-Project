@@ -1,30 +1,74 @@
-# React + TypeScript + Vite
+# Graph Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This application is a Single Page Web Application (SPA) built using React and TypeScript. It leverages various libraries to create an interactive dashboard for displaying charts. The primary libraries used include MUI/React Bootstrap for UI components, Highcharts for chart visualization, and Redux for state management (optional). Additionally, middleware like Redux Thunk or Redux Saga can be integrated for advanced state management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+    ```bash
+    git clone https://github.com/HungTruong4689/React-Chart-Project.git
 
-- Configure the top-level `parserOptions` property like this:
+    ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+2. Install dependencies:
+
+```bash
+  npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. Usage
+
+### Development
+
+Run the application in development mode:
+
+```bash
+  npm run dev
+```
+
+This will start the development server using Vite.
+
+4. Building
+   Build the application for production:
+
+```bash
+  npm run build
+```
+
+This command compiles TypeScript code and bundles the application using Vite.
+
+5. Linting
+   Lint the code using ESLint:
+
+```bash
+  npm run lint
+```
+
+This command uses ESLint to check the code for potential issues and enforces a consistent coding style.
+
+6. Preview
+   Preview the production build:
+
+```bash
+npm run preview
+```
+
+This command serves the production build locally for previewing before deployment.
+
+7. Features
+
+-   Responsive UI design.
+-   Two main routes: "View mode" and "Settings."
+-   "View mode" route displays a list of charts with a date range filter.
+-   Date range filter affects the displayed charts based on selected dates.
+-   "Settings" route allows users to add, edit, or remove charts using a modal window.
+-   Users can customize chart properties such as name, type (line, spline, area), and color.
+
+8.  Data Source
+    The data for the charts can be either randomly generated. Each value should have "value" and "date" fields.
+
+9.  Configuration
+    Check the package.json file for details on dependencies and development scripts.
