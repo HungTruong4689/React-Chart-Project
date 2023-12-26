@@ -41,22 +41,6 @@ const SettingPage: React.FC<SettingPageProps> = () => {
         setModalOpen(false)
     }
 
-    // const generateRandomData = () => {
-    //     const data = []
-    //     let currentValue = 0
-
-    //     while (currentValue <= 20) {
-    //         const value = Math.floor(Math.random() * 100) // Generate random values between 0 and 100
-    //         data.push(value)
-
-    //         currentValue++
-    //     }
-
-    //     return data
-    // }
-
-    // const randomData = generateRandomData()
-
     return (
         <div className='container mx-auto p-4'>
             <div className='flex justify-center'>
