@@ -4,7 +4,7 @@
 
 This application is a Single Page Web Application (SPA) built using React and TypeScript. It leverages various libraries to create an interactive dashboard for displaying charts. The primary libraries used include TailwindCSS for UI components, Highcharts for chart visualization, and Redux for state management.
 
-The application can be viewed on this folowing link: https://react-chart-project-7lmt.vercel.app/view
+The application can be viewed on this folowing link: https://react-chart-project-7lmt.vercel.app
 
 ## Installation
 
