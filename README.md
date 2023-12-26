@@ -2,7 +2,7 @@
 
 ## Overview
 
-This application is a Single Page Web Application (SPA) built using React and TypeScript. It leverages various libraries to create an interactive dashboard for displaying charts. The primary libraries used include MUI/React Bootstrap for UI components, Highcharts for chart visualization, and Redux for state management (optional). Additionally, middleware like Redux Thunk or Redux Saga can be integrated for advanced state management.
+This application is a Single Page Web Application (SPA) built using React and TypeScript. It leverages various libraries to create an interactive dashboard for displaying charts. The primary libraries used include TailwindCSS for UI components, Highcharts for chart visualization, and Redux for state management.
 
 ## Installation
 
