@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../redux/store'
-import { addChart, updateChart, removeChart, ChartInstance } from '../redux/chartConfigSlice'
-import ChartConfigModal from '../components/ChartConfigModal'
-import UIChart from '../components/UIChart'
-
-interface SettingPageProps {
-    // Define your props here
-}
+import { addChart, updateChart, removeChart } from '../redux/chartConfigSlice'
+import ChartConfigModal from '../components/modal/ChartConfigModal'
+import UIChart from '../components/chart/UIChart'
+import { ChartInstance, SettingPageProps } from '../components/types/type'
 
 const SettingPage: React.FC<SettingPageProps> = () => {
     const [isModalOpen, setModalOpen] = useState(false)

@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import GenericChart from '../components/GenericChart'
+import GenericChart from '../components/chart/GenericChart'
 import { data } from '../utils/data'
 import { RootState } from '../redux/store'
-
-interface ViewPageProps {}
+import { ViewPageProps } from '../components/types/type'
 
 const ViewPage: React.FC<ViewPageProps> = () => {
     const charts = useSelector((state: RootState) => state.chartConfig.charts)
@@ -21,7 +20,7 @@ const ViewPage: React.FC<ViewPageProps> = () => {
     return (
         <div className=' p-8'>
             <h1 className='text-3xl font-bold mb-6 text-blue-500 flex justify-center'>
-                My React Highcharts App - View Page
+                React Highcharts App - View Page
             </h1>
 
             <div className='flex justify-center items-center gap-4 mb-4 mx-auto'>
@@ -56,24 +55,10 @@ const ViewPage: React.FC<ViewPageProps> = () => {
                     />
                 </div>
             </div>
-
-            {/* {filteredData.length === 0 ? (
-                <p className='text-white'>No data available for the selected date range.</p>
-            ) : (
-                <div className='grid grid-cols-3 gap-4'>
-                    {charts.map((chart) => (
-                        <GenericChart
-                            key={chart.id}
-                            type={chart.type}
-                            data={filteredData}
-                            color={chart.color}
-                            name={chart.name}
-                        />
-                    ))}
-                </div>
-            )} */}
             {filteredData.length === 0 ? (
-                <p className='text-white'>No data available for the selected date range.</p>
+                <p className='text-center text-blue-600 font-semibold py-8 bg-gray-200 rounded-md shadow-md'>
+                    No data available for the selected date range.
+                </p>
             ) : (
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                     {charts.map((chart) => (

@@ -1,22 +1,9 @@
 import React from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { UIChartProps } from '../types/type'
 
-interface UIChartProps {
-    type: 'line' | 'bar' | 'column' | 'area' | 'scatter' | 'spline'
-    color: string
-
-    // startDate: string;
-    // endDate: string;
-}
-
-const UIChart: React.FC<UIChartProps> = ({
-    type,
-    color,
-
-    // startDate,
-    // endDate,
-}) => {
+const UIChart: React.FC<UIChartProps> = ({ type, color }) => {
     const generateRandomData = () => {
         const data = []
         let currentValue = 0

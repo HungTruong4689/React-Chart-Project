@@ -1,15 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-export type ChartInstance = {
-    id: number
-    type: 'line' | 'bar' | 'column' | 'area' | 'scatter' | 'spline'
-    name: string
-    color: string
-}
-
-export type ChartConfigState = {
-    charts: ChartInstance[]
-}
+import { ChartConfigState, ChartInstance } from '../components/types/type'
 
 const initialState: ChartConfigState = {
     charts: [

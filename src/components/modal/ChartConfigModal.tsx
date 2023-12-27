@@ -1,21 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ChartInstance } from '../redux/chartConfigSlice'
-
-type ChartConfigModalProps = {
-    chart?: ChartInstance
-    onClose: () => void
-    onSave: (chart: ChartInstance) => void
-    isUpdate?: boolean
-    isAddChart: string
-}
-enum ChartType {
-    Line = 'line',
-    Bar = 'bar',
-    Column = 'column',
-    Area = 'area',
-    Scatter = 'scatter',
-    Spline = 'spline',
-}
+import { ChartConfigModalProps, ChartInstance, ChartType } from '../types/type'
 
 const ChartConfigModal: React.FC<ChartConfigModalProps> = ({
     chart,
