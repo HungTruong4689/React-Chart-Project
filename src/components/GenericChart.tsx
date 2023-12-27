@@ -9,18 +9,9 @@ interface GenrericChartProps {
     type: 'line' | 'bar' | 'column' | 'area' | 'scatter' | 'spline'
     color: string
     name: string
-    // startDate: string;
-    // endDate: string;
 }
 
-const GenrericChart: React.FC<GenrericChartProps> = ({
-    data,
-    type,
-    color,
-    name,
-    // startDate,
-    // endDate,
-}) => {
+const GenrericChart: React.FC<GenrericChartProps> = ({ data, type, color, name }) => {
     const [selectedDateRange, setSelectedDateRange] = useState<
         'oneMonth' | 'sixMonths' | 'oneYear' | 'fiveYears' | 'all'
     >('oneMonth')

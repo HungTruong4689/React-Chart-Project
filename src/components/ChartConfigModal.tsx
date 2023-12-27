@@ -8,6 +8,14 @@ type ChartConfigModalProps = {
     isUpdate?: boolean
     isAddChart: string
 }
+enum ChartType {
+    Line = 'line',
+    Bar = 'bar',
+    Column = 'column',
+    Area = 'area',
+    Scatter = 'scatter',
+    Spline = 'spline',
+}
 
 const ChartConfigModal: React.FC<ChartConfigModalProps> = ({
     chart,
@@ -16,25 +24,14 @@ const ChartConfigModal: React.FC<ChartConfigModalProps> = ({
     isUpdate = false,
     isAddChart,
 }) => {
-    console.log('check isUpate: ', isUpdate)
     const [chartName, setChartName] = useState('')
-    const [chartType, setChartType] = useState<
-        'line' | 'bar' | 'column' | 'area' | 'scatter' | 'spline'
-    >('line')
+    const [chartType, setChartType] = useState<ChartType>(ChartType.Line)
     const [chartColor, setChartColor] = useState('#000000')
 
-    const chartTypes: ChartInstance['type'][] = [
-        'line',
-        'bar',
-        'column',
-        'area',
-        'scatter',
-        'spline',
-    ]
     useEffect(() => {
         if (chart && isUpdate) {
             setChartName(chart.name)
-            setChartType(chart.type)
+            setChartType(chart.type as ChartType)
             setChartColor(chart.color)
         }
     }, [chart, isUpdate])
@@ -66,20 +63,10 @@ const ChartConfigModal: React.FC<ChartConfigModalProps> = ({
                         />
                         <select
                             value={chartType}
-                            onChange={(e) =>
-                                setChartType(
-                                    e.target.value as
-                                        | 'line'
-                                        | 'bar'
-                                        | 'column'
-                                        | 'area'
-                                        | 'scatter'
-                                        | 'spline',
-                                )
-                            }
+                            onChange={(e) => setChartType(e.target.value as ChartType)}
                             className='px-4 py-2 border rounded-md mb-2 w-full'
                         >
-                            {chartTypes.map((type) => (
+                            {Object.values(ChartType).map((type) => (
                                 <option key={type} value={type}>
                                     {type.charAt(0).toUpperCase() + type.slice(1)}{' '}
                                     {/* Capitalize the first letter */}
